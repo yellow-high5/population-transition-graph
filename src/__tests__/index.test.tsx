@@ -6,7 +6,7 @@ describe('pages/release/index.tsx', () => {
   it('正しく描画されること', () => {
     render(<Home />);
 
-    const title = screen.getByText('Get started by editing');
+    const title = screen.getByText('Population Transition Graph');
     expect(title).toBeInTheDocument();
   });
 });

@@ -83,3 +83,12 @@ yarn jest
 ```
 
 👉 [husky](https://github.com/typicode/husky) によってローカルでコミットする前に Jest でテストが失敗している場合はコミットが中止されます。
+
+## npm ライブラリ
+
+以下機能の実装に使用しているライブラリです。
+
+| 機能             | ライブラリ                                                         |
+| ---------------- | ------------------------------------------------------------------ |
+| API クライアント | [Axios](https://axios-http.com/), [SWR](https://swr.vercel.app/ja) |
+| グラフ描画       | [Recharts](https://recharts.org/en-US)                             |
