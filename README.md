@@ -89,7 +89,6 @@ yarn test:unit
 以下のコマンドで E2E テストを実行できます。
 
 ```sh
-yarn build && yarn start
 yarn test:e2e
 ```
 

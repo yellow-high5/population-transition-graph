@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "compile": "tsc -p tsconfig.json",
     "lint": "next lint --max-warnings=0 --dir .",
     "lint:fix": "next lint --max-warnings=0 --fix --dir .",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",

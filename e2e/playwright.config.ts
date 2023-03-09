@@ -7,5 +7,9 @@ export default defineConfig({
     video: 'on-first-retry',
     baseURL: 'http://localhost:3000',
   },
+  webServer: {
+    command: 'yarn dev',
+    port: 3000,
+  },
   timeout: 10000,
 });
