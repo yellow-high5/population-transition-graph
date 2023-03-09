@@ -1,8 +1,5 @@
 name: Deploy Check
 
-env:
-  TZ: 'Asia/Tokyo'
-
 on:
   push:
     branches:
@@ -19,19 +16,24 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Typescript Compiler Check
-        run: yarn compile
+        run: rm -rf node_modules && yarn install --frozen-lockfile
 
       - name: Lint Check
         run: yarn lint
 
       - name: Run Unit Test
-        run: yarn test:jest
+        run: yarn test:unit
 
       - name: Install Playwright
         run: npx playwright install --with-deps
+      - name: CI Build and Start Application
+        env:
+          NEXT_PUBLIC_RESAS_API_ENDPOINT: ${{ secrets.NEXT_PUBLIC_RESAS_API_ENDPOINT }}
+          NEXT_PUBLIC_RESAS_API_KEY: ${{ secrets.NEXT_PUBLIC_RESAS_API_KEY }}
+          CI: true
+        run: |
+          yarn build
+          yarn start &
       - name: Run E2E Test
         run: yarn test:e2e
 
