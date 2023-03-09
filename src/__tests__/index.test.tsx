@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Home from 'pages';
 
 describe('pages/release/index.tsx', () => {
-  it('正しく描画されること', () => {
+  it('ヘッダーのタイトルが正しく表示されること', () => {
     render(<Home />);
 
     const title = screen.getByText('Population Transition Graph');
