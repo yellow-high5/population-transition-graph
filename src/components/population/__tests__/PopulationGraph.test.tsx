@@ -25,7 +25,7 @@ describe('components/prefectures/PopulationGraph.tsx', () => {
     };
     render(
       <SWRConfig value={{ use: [testMiddleware] }}>
-        <PopulationGraph selectedPrefList={[{ name: '謎の都道府県', code: 48 }]} />
+        <PopulationGraph selectedPrefList={[{ name: '北海道', code: 1 }]} />
       </SWRConfig>,
     );
 
@@ -33,5 +33,7 @@ describe('components/prefectures/PopulationGraph.tsx', () => {
     expect(loadingText).toBeInTheDocument();
   });
 
-  it.skip('グラフの凡例に選択した都道府県名が表示されていること', () => {});
+  it.skip('グラフの凡例に選択した都道府県名が表示されていること', () => {
+    /* Rechartsのグラフ描画については、E2Eテストで描画テストを実施するためスキップ */
+  });
 });
